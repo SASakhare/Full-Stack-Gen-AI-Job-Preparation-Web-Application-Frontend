@@ -1,13 +1,30 @@
+import { useState } from "react";
 import "../auth.form.scss"
-
+import { useAuth } from "../hooks/useAuth";
 import { useNavigate,Link } from "react-router";
 
 const Register = () => {
 
     const navigate=useNavigate();
 
-    const handleSubmit = (e) => {
+    const [username,setUsername]=useState("");
+    const [email,setEmail]=useState("");
+    const [password,setPassword]=useState("");
+    const {loading,handleRegister}=useAuth();
+
+    const handleSubmit = async(e) => {
         e.preventDefault();
+
+        await handleRegister({username,email,password});
+
+        navigate("/")
+    }
+    if (loading) {
+        return (
+            <main>
+                <h1>Loading .....</h1>
+            </main>
+        )
     }
 
     return (
@@ -18,17 +35,23 @@ const Register = () => {
 
                     <div className="input-group">
                         <label htmlFor="username">Username</label>
-                        <input type="text" id="username" name="username" placeholder="Enter username" />
+                        <input type="text" id="username" name="username" placeholder="Enter username"
+                            onChange={(e)=>setUsername(e.target.value)}
+                        />
                     </div>
 
                     <div className="input-group">
                         <label htmlFor="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Enter email address" />
+                        <input type="email" id="email" name="email" placeholder="Enter email address"
+                            onChange={(e)=>setEmail(e.target.value)}
+                        />
                     </div>
 
                     <div className="input-group">
                         <label htmlFor="password">Password</label>
-                        <input type="password" id="password" name="password" placeholder="Enter email address" />
+                        <input type="password" id="password" name="password" placeholder="Enter email address"
+                            onCanPlay={(e)=>setPassword(e.target.value)}
+                        />
                     </div>
 
                     <button className="button primary-button">Register</button>
@@ -38,5 +61,6 @@ const Register = () => {
         </main>
     )
 }
+
 
 export default Register
