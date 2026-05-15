@@ -1,0 +1,204 @@
+.home {
+    min-height: 100vh;
+    width: 100%;
+    background: #050814;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+    .wrapper {
+        width: 100%;
+        max-width: 1200px;
+    }
+
+    .hero-section {
+        text-align: center;
+        margin-bottom: 2rem;
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 0.8rem;
+
+            span {
+                color: #ff2d8d;
+            }
+        }
+
+        p {
+            color: #b0b7c3;
+            font-size: 1rem;
+            max-width: 650px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+    }
+
+    .interview-input-group {
+        display: flex;
+        gap: 2rem;
+        background: #0d1322;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 20px;
+        padding: 2rem;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .left,
+    .right {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+
+        label {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+    }
+
+    .badge {
+        font-size: 0.75rem;
+        font-weight: 700;
+        padding: 0.35rem 0.7rem;
+        border-radius: 8px;
+    }
+
+    .required,
+    .best-results {
+        background: rgba(255, 45, 141, 0.15);
+        color: #ff2d8d;
+    }
+
+    textarea {
+        width: 100%;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 14px;
+        background: #151b2f;
+        color: white;
+        padding: 1rem;
+        resize: none;
+        outline: none;
+        font-size: 0.95rem;
+        line-height: 1.6;
+
+        &::placeholder {
+            color: #8b93a7;
+        }
+    }
+
+    #jobDescription {
+        height: 500px;
+    }
+
+    #selfDescription {
+        height: 120px;
+    }
+
+    .char-count {
+        text-align: right;
+        margin-top: 0.5rem;
+        color: #8b93a7;
+    }
+
+    .input-group {
+        margin-bottom: 1.2rem;
+
+        p,
+        label {
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+    }
+
+    .file-label {
+        background: #151b2f;
+        border: 1px dashed rgba(255, 255, 255, 0.2);
+        border-radius: 14px;
+        padding: 2rem;
+        text-align: center;
+        cursor: pointer;
+        transition: 0.2s;
+
+        &:hover {
+            border-color: #ff2d8d;
+        }
+
+        h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        small {
+            color: #9ea6ba;
+        }
+    }
+
+    .divider {
+        text-align: center;
+        margin: 1rem 0;
+        color: #8b93a7;
+        font-size: 0.9rem;
+    }
+
+    .info-box {
+        background: #112246;
+        border: 1px solid rgba(90, 160, 255, 0.2);
+        color: #c8dcff;
+        padding: 1rem;
+        border-radius: 12px;
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .primary-button {
+        margin-top: auto;
+        border: none;
+        background: #ff2d8d;
+        color: white;
+        font-size: 1rem;
+        font-weight: 700;
+        padding: 1rem;
+        border-radius: 14px;
+        cursor: pointer;
+        transition: 0.2s;
+
+        &:hover {
+            transform: translateY(-2px);
+        }
+    }
+
+    .bottom-links {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 2rem;
+        color: #8b93a7;
+        font-size: 0.9rem;
+
+        span {
+            cursor: pointer;
+        }
+    }
+
+    @media (max-width: 900px) {
+        .interview-input-group {
+            flex-direction: column;
+        }
+
+        .left,
+        .right {
+            width: 100%;
+        }
+    }
+}
