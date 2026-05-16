@@ -35,7 +35,7 @@ const QuestionCard = ({ item, index }) => {
 const Interview = () => {
     const [activeTab, setActiveTab] = useState("technical");
 
-    const { report, getReportById, loading } = useInterview();
+    const { report, getReportById, loading, getResumePdf } = useInterview();
 
     const { interviewId } = useParams()
 
@@ -94,6 +94,13 @@ const Interview = () => {
                     >
                         Road Map
                     </button>
+
+                    <button 
+                        onClick={()=>{getResumePdf(interviewId)}}
+                        className="button primary-button">
+                        Download Resume
+                    </button>
+
                 </aside>
 
                 {/* CENTER CONTENT */}
@@ -157,6 +164,9 @@ const Interview = () => {
                             ))}
                         </>
                     )}
+
+
+
 
                 </main>
 

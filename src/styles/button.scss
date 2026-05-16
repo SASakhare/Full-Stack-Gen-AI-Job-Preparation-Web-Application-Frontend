@@ -9,6 +9,9 @@
     font-size: medium;
     font-weight: 500;
     color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     cursor: pointer;
     transition: all 0.3s ease-in-out;
